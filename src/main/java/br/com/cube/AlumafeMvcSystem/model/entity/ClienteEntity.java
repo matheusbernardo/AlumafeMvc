@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name="Cliente")
@@ -19,16 +20,20 @@ public class ClienteEntity {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	
-	@Column(name="nome", nullable=false)
+	@Column(name="nome")
+	@NotBlank(message= "O campo de Nome não pode estar vazio!")
 	private String name;
 	
-	@Column(name="endereco", nullable=false)
+	@Column(name="endereco")
+	@NotBlank(message="O campo de Endereço não pode estar vazio!")
 	private String address;
 	
 	@Column(name="email")
+	@NotBlank(message= "O campo de E-mail não pode estar vazio!")
 	private String email;
 	
 	@Column(name="telefone", nullable=false)
+	@NotBlank(message="O campo Telefone não pode estar vazio!")
 	private String tell;
 	
 	@OneToMany(cascade=CascadeType.ALL, mappedBy="cliente")

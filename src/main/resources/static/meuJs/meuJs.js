@@ -30,8 +30,21 @@ var trecho = "<div class='row' id='item'>" +
 $("#orcamento").append(trecho);
 }
 
+function validaFormularioDeCliente() {
+	
+}
+
   $(document).ready(function(){
      $('#adicionaItem').click(function(){
     	 adicionaItemAOrcamento();
      });
+     $('#target').submit(function(){
+    	 validaFormularioDeCliente();
+     });
   });
+  
+  
+  
+function validaFormularioCliente() {
+	
+}
